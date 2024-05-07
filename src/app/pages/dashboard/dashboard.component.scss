@@ -1,0 +1,14 @@
+:host {
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto !important;
+    margin: 0 auto;
+    padding: 25px 150px 50px;
+}
+
+::ng-deep .page-layout__body {
+    position: relative;
+}

@@ -1,0 +1,14 @@
+<div class="empty-content">
+    <div class="empty-content__title wrap-text text--center">
+        {{ emptyContentKeyword }}
+    </div>
+    <button
+        *ngIf="actionKeyword"
+        mat-flat-button
+        color="accent"
+        class="empty-content__action"
+        [routerLink]="routerLink"
+        (click)="onAction()">
+        {{ actionKeyword }}
+    </button>
+</div>

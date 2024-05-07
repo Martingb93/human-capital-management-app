@@ -1,0 +1,48 @@
+<hcm-page-layout [isLoading]="departments().loading && employeeRecords().loading" titleKeyword="Employee Records">
+    <button [routerLink]="['./record']" mat-flat-button color="accent" page-layout-options>
+        Add Record
+    </button>
+    <p-table *ngIf="employeeRecords()?.items?.length; else emptyContentTemplate" [columns]="employeeRecords().columns"
+        [value]="employeeRecords().items" [loading]="employeeRecords().loading" [tableStyle]="{ 'min-width': '50rem' }"
+        dataKey="name" sortField="name" [rows]="5" [paginator]="true" [showCurrentPageReport]="true"
+        [rowsPerPageOptions]="[5,10,15]">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns" [style.max-width.px]="col.width" [style.min-width.px]="col.width"
+                    pResizableColumn pSortableColumn="{{col.key}}" width="{{col.width}}">
+                    {{ col.keyword }}
+                    <p-sortIcon *ngIf="col.key" field="{{col.key}}"></p-sortIcon>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-record>
+            <tr [routerLink]="['./record']" [queryParams]="{ id: record.id }" class="pointer">
+                <td><img [ngSrc]="record.imageUrl ?? 'assets/user.png'" alt="employee_profile_image" width="35"
+                        height="35" class="radius-circle" [priority]="true" /></td>
+                <td>{{ record.name }}</td>
+                <td>{{ departments()?.itemsMapType?.[record.departmentId] }}</td>
+                <td>{{ record.role }}</td>
+                <td>{{ record.salary | hcmCurrency: '€' }}</td>
+                <td>
+                    <button (click)="$event.preventDefault(); $event.stopPropagation();" mat-icon-button
+                        [matMenuTriggerFor]="recordMenu">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #recordMenu="matMenu" [xPosition]="'before'" [overlapTrigger]="true">
+                        <button [routerLink]="['./record']" [queryParams]="{ id: record.id }" mat-menu-item>
+                            Open Record
+                        </button>
+                        <button (click)="onDeleteEmployeeRecord(record.id)" mat-menu-item>
+                            Delete Record
+                        </button>
+                    </mat-menu>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</hcm-page-layout>
+
+<ng-template #emptyContentTemplate>
+    <hcm-empty-content emptyContentKeyword="No Employee Records!" actionKeyword="Add Record" routerLink="./record">
+    </hcm-empty-content>
+</ng-template>

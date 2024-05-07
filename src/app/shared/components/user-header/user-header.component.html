@@ -1,0 +1,12 @@
+<span class="margin-right--20">{{ currentUser()?.email }}</span>
+
+<img [matMenuTriggerFor]="userMenu" [ngSrc]="currentUser()?.imageUrl ?? 'assets/user.png'" alt="user" [width]="40" [height]="40" [priority]="true" class="radius-circle"/>
+
+<mat-menu #userMenu="matMenu" [xPosition]="'before'" [overlapTrigger]="false">
+    <button [routerLink]="['/settings']" mat-menu-item>
+        Settings
+    </button>
+    <button (click)="onLogout()" mat-menu-item>
+        Logout
+    </button>
+</mat-menu>

@@ -1,0 +1,26 @@
+:host {
+    display: block;
+    height: 100%;
+    background-color: var(--midnightBlue);
+}
+
+.wrapper {
+    &--main {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: var(--dim-grey);
+        border-radius: 10px;
+        height: calc(100% - 70px);
+        overflow: hidden;
+    }
+
+    &--section {
+        display: flex;
+        flex-grow: 1;
+        align-items: stretch;
+        padding: 25px 32px;
+        min-width: 0;
+        overflow-y: auto;
+    }
+}

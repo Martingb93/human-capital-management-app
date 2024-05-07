@@ -1,0 +1,36 @@
+<hcm-page-layout [isLoading]="department()?.loading" [titleKeyword]="titleKeyword">
+    <div class="flex-container">
+        <div class="flex-column">
+            <ng-container *ngIf="department()?.data">
+                <span class="padding-bottom--10">Manager: {{ department()?.data?.managerName }}</span>
+                <img [ngSrc]="department()?.data?.managerImageUrl ?? 'assets/user.png'" alt="employee_profile_image" width="150"
+                    height="150" class="radius-circle margin-bottom--20" [priority]="true" />
+            </ng-container>
+            <form [formGroup]="departmentFormGroup">
+                <label class="form-label"
+                    [class.form-label--invalid]="departmentFormGroup.controls['name'].invalid && departmentFormGroup.controls['name'].touched">
+                    <span>Department name</span>
+                    <input class="form-control" type="text" id="department_name" name="department_name"
+                        [class.form-control--invalid]="departmentFormGroup.controls['name'].invalid && departmentFormGroup.controls['name'].touched"
+                        [attr.placeholder]="'Name here...'" [formControl]="departmentFormGroup.controls['name']" />
+                </label>
+
+                <label class="form-label">
+                    <span>Description</span>
+                    <textarea class="form-control" type="text" id="department_description" name="department_description" rows="3" style="min-width: 350px"
+                        [attr.placeholder]="'Description...'"
+                        [formControl]="departmentFormGroup.controls['description']"></textarea>
+                </label>
+
+                <button [disabled]="!departmentFormGroup.valid" [routerLink]="['../']" (click)="onSaveDepartment()"
+                    mat-flat-button color="accent">
+                    Save Department
+                </button>
+            </form>
+        </div>
+        <button *ngIf="department()" [routerLink]="['../']" (click)="onDeleteDepartment()" mat-icon-button
+            color="primary">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</hcm-page-layout>

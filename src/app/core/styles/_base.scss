@@ -1,0 +1,17 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    color: var(--dark-gunmetal);
+    overflow: hidden;
+}
+
+p-table {
+    border: 1px solid var(--grey);
+
+    tr {
+        &:hover {
+            background-color: var(--grey);
+        }
+    }
+}

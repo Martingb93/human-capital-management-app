@@ -1,0 +1,6 @@
+<hcm-page-layout titleKeyword="Settings">
+    <img [ngSrc]="currentUser()?.imageUrl ?? 'assets/user.png'" alt="manager-image" width="150" height="150"
+        class="radius-circle" [priority]="true" />
+
+    <span class="margin-top--20">{{ currentUser()?.email }}</span>
+</hcm-page-layout>

@@ -12,6 +12,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "sourceMap": true,
+    "strictNullChecks": false,
     "declaration": false,
     "experimentalDecorators": true,
     "moduleResolution": "node",
@@ -22,7 +23,14 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@core/*": ["./src/app/core/*"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@environment": ["./src/app/environment"],
+      "@auth/*": ["./src/app/authentication"],
+      "@pages/*": ["./src/app/pages/*"]
+  }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -1,0 +1,23 @@
+:host {
+    background-color: var(--midnightBlue);
+    display: block;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    img {
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    app-user-header {
+        margin-right: 10px;
+    }
+}

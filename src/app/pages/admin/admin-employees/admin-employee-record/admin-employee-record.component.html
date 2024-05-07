@@ -1,0 +1,59 @@
+<hcm-page-layout [isLoading]="!employeeRecord() && departments().loading" [titleKeyword]="titleKeyword">
+    <div class="flex-container">
+        <div class="flex-column">
+            <img [ngSrc]="employeeRecord()?.imageUrl ?? 'assets/user.png'" alt="employee_profile_image" width="150"
+                height="150" class="radius-circle margin-bottom--20" [priority]="true" />
+            <form [formGroup]="employeeRecordFormGroup">
+                <label class="form-label"
+                    [class.form-label--invalid]="employeeRecordFormGroup.controls['name'].invalid && employeeRecordFormGroup.controls['name'].touched">
+                    <span>Name</span>
+                    <input class="form-control" type="text" id="employee_record_name" name="employee_record_name"
+                        [class.form-control--invalid]="employeeRecordFormGroup.controls['name'].invalid && employeeRecordFormGroup.controls['name'].touched"
+                        [attr.placeholder]="'Name here...'" [formControl]="employeeRecordFormGroup.controls['name']" />
+                </label>
+
+                <label class="form-label"
+                    [class.form-label--invalid]="employeeRecordFormGroup.controls['departmentId'].invalid && employeeRecordFormGroup.controls['departmentId'].touched">
+                    <span>Department Name</span>
+                    <button [matMenuTriggerFor]="departmentsMenu" class="form-control__dropdown--button" mat-flat-button>
+                        <span>{{ departments()?.itemsMapType?.[employeeRecordFormGroup.controls['departmentId'].value] }}</span>
+                        <mat-icon class="opacity--0 text--20px">arrow_drop_down</mat-icon>
+                    </button>
+                    <mat-menu #departmentsMenu="matMenu" class="dropdown-menu" [xPosition]="'after'"
+                        [overlapTrigger]="true">
+                        <button *ngFor="let department of departments().items" (click)="selectDepartment(department)"
+                            mat-menu-item>
+                            {{ department.name }}
+                        </button>
+                    </mat-menu>
+                </label>
+
+                <label class="form-label"
+                    [class.form-label--invalid]="employeeRecordFormGroup.controls['role'].invalid && employeeRecordFormGroup.controls['role'].touched">
+                    <span>Role</span>
+                    <input class="form-control" type="text" id="employee_record_role" name="employee_record_role"
+                        [class.form-control--invalid]="employeeRecordFormGroup.controls['role'].invalid && employeeRecordFormGroup.controls['role'].touched"
+                        [attr.placeholder]="' Role here...'" [formControl]="employeeRecordFormGroup.controls['role']" />
+                </label>
+
+                <label class="form-label"
+                    [class.form-label--invalid]="employeeRecordFormGroup.controls['salary'].invalid && employeeRecordFormGroup.controls['salary'].touched">
+                    <span>Salary €</span>
+                    <input class="form-control" type="text" id="employee_record_salary" name="employee_record_salary"
+                        [class.form-control--invalid]="employeeRecordFormGroup.controls['salary'].invalid && employeeRecordFormGroup.controls['salary'].touched"
+                        [attr.placeholder]="'Salary here...'"
+                        [formControl]="employeeRecordFormGroup.controls['salary']" />
+                </label>
+
+                <button [disabled]="!employeeRecordFormGroup.valid" [routerLink]="['../']"
+                    (click)="onSaveEmployeeRecord()" mat-flat-button color="accent">
+                    Save Employee Record
+                </button>
+            </form>
+        </div>
+        <button *ngIf="employeeRecord()" [routerLink]="['../']" (click)="onDeleteEmployeeRecord()" mat-icon-button
+            color="primary">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</hcm-page-layout>

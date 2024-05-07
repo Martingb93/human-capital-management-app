@@ -1,0 +1,46 @@
+<hcm-page-layout [isLoading]="false" titleKeyword="Departments">
+    <button [routerLink]="['./department']" mat-flat-button color="accent" page-layout-options>
+        Add Department
+    </button>
+    <p-table *ngIf="departments()?.items?.length; else emptyContentTemplate" [columns]="departments().columns"
+        [value]="departments().items" [loading]="departments().loading" [tableStyle]="{ 'min-width': '50rem' }"
+        dataKey="id" sortField="id" [rows]="5" [paginator]="true" [showCurrentPageReport]="true"
+        [rowsPerPageOptions]="[5,10,15]">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns" [style.max-width.px]="col.width" [style.min-width.px]="col.width"
+                    pResizableColumn pSortableColumn="{{col.key}}" width="{{col.width}}">
+                    {{ col.keyword }}
+                    <p-sortIcon *ngIf="col.key" field="{{col.key}}"></p-sortIcon>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-department>
+            <tr [routerLink]="['./department']" [queryParams]="{ id: department.id }" class="pointer">
+                <td>{{ department.id }}</td>
+                <td>{{ department.name }}</td>
+                <td>{{ department.description }}</td>
+                <td>{{ department.managerId }}</td>
+                <td>
+                    <button (click)="$event.preventDefault(); $event.stopPropagation();" mat-icon-button
+                        [matMenuTriggerFor]="recordMenu">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #recordMenu="matMenu" [xPosition]="'before'" [overlapTrigger]="true">
+                        <button [routerLink]="['./record']" [queryParams]="{ id: department.id }" mat-menu-item>
+                            Open Department
+                        </button>
+                        <button (click)="onDeleteDepartment(department.id)" mat-menu-item>
+                            Delete Department
+                        </button>
+                    </mat-menu>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</hcm-page-layout>
+
+<ng-template #emptyContentTemplate>
+    <hcm-empty-content emptyContentKeyword="No Departments!" actionKeyword="Add Department" routerLink="./department">
+    </hcm-empty-content>
+</ng-template>

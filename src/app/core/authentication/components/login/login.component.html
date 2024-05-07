@@ -1,0 +1,20 @@
+<img ngSrc="assets/logo.png" alt="hcm_logo" [width]="200" [height]="60" [priority]="true" class="margin-bottom--50" />
+
+<form [formGroup]="loginFormGroup">
+    <label class="form-label"
+        [class.form-label--invalid]="loginFormGroup.controls['username'].invalid && loginFormGroup.controls['username'].touched">
+        <input class="form-control" type="text" id="login_username" name="login_username"
+            [class.form-control--invalid]="loginFormGroup.controls['username'].invalid && loginFormGroup.controls['username'].touched"
+            [attr.placeholder]="'Username...'" [formControl]="loginFormGroup.controls['username']" />
+    </label>
+    <label class="form-label"
+        [class.form-label--invalid]="loginFormGroup.controls['password'].invalid && loginFormGroup.controls['password'].touched">
+        <input class="form-control" type="text" id="login_password" name="login_password"
+            [class.form-control--invalid]="loginFormGroup.controls['password'].invalid && loginFormGroup.controls['password'].touched"
+            [attr.placeholder]="'Password...'" [formControl]="loginFormGroup.controls['password']" />
+    </label>
+
+    <button (click)="login()" mat-button color="accent" class="margin-0-auto" [disabled]="!loginFormGroup.valid">
+        Login
+    </button>
+</form>

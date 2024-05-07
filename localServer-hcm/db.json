@@ -1,0 +1,270 @@
+{
+  "users": [
+    {
+      "type": 1,
+      "id": 333,
+      "email": "managerIvan@asd123.bgg",
+      "imageUrl": "https://randomuser.me/api/portraits/men/50.jpg",
+      "firstName": "Ivan"
+    },
+    {
+      "type": 2,
+      "id": 4444,
+      "email": "adminMitko@asd123.bgg",
+      "imageUrl": "https://randomuser.me/api/portraits/men/60.jpg",
+      "firstName": "Mitko"
+    }
+  ],
+  "userCredentials": [
+    {
+      "username": "managerIvan@asd123.bgg",
+      "password": "hash_of_password"
+    },
+    {
+      "username": "adminMitko@asd123.bgg",
+      "password": "hash_of_password"
+    }
+  ],
+  "employeeRecords": [
+    {
+      "id": 1,
+      "name": "Veronica",
+      "salary": 5000,
+      "departmentId": 1,
+      "role": "Sales Representative",
+      "imageUrl": "https://randomuser.me/api/portraits/women/1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "salary": 6000,
+      "departmentId": 2,
+      "role": "Marketing Coordinator",
+      "imageUrl": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Winston",
+      "salary": 7000,
+      "departmentId": 3,
+      "role": "Financial Analyst",
+      "imageUrl": "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Brat",
+      "salary": 8000,
+      "departmentId": 4,
+      "role": "HR Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/men/4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Eve",
+      "salary": 9000,
+      "departmentId": 5,
+      "role": "Software Engineer",
+      "imageUrl": "https://randomuser.me/api/portraits/women/5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Frank",
+      "salary": 10000,
+      "departmentId": 6,
+      "role": "Operations Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/men/6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Yana",
+      "salary": 5300,
+      "departmentId": 1,
+      "role": "Sales Associate",
+      "imageUrl": "https://randomuser.me/api/portraits/women/7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Hannah",
+      "salary": 6500,
+      "departmentId": 2,
+      "role": "Marketing Specialist",
+      "imageUrl": "https://randomuser.me/api/portraits/women/8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Travis",
+      "salary": 7500,
+      "departmentId": 3,
+      "role": "Financial Controller",
+      "imageUrl": "https://randomuser.me/api/portraits/men/9.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Jack",
+      "salary": 8500,
+      "departmentId": 5,
+      "role": "IT Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/men/10.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Jase",
+      "salary": 5000,
+      "departmentId": 1,
+      "role": "Sales Representative",
+      "imageUrl": "https://randomuser.me/api/portraits/women/11.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Charlie",
+      "salary": 6000,
+      "departmentId": 2,
+      "role": "Marketing Coordinator",
+      "imageUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+    },
+    {
+      "id": 13,
+      "name": "George",
+      "salary": 5600,
+      "departmentId": 3,
+      "role": "Financial Analyst",
+      "imageUrl": "https://randomuser.me/api/portraits/men/13.jpg"
+    },
+    {
+      "id": 14,
+      "name": "David",
+      "salary": 8000,
+      "departmentId": 4,
+      "role": "HR Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/men/14.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Ivet",
+      "salary": 9000,
+      "departmentId": 5,
+      "role": "Software Engineer",
+      "imageUrl": "https://randomuser.me/api/portraits/women/15.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Frank",
+      "salary": 10000,
+      "departmentId": 6,
+      "role": "Operations Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/men/16.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Grace",
+      "salary": 5500,
+      "departmentId": 1,
+      "role": "Sales Associate",
+      "imageUrl": "https://randomuser.me/api/portraits/women/17.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Hannah",
+      "salary": 6500,
+      "departmentId": 2,
+      "role": "Marketing Specialist",
+      "imageUrl": "https://randomuser.me/api/portraits/women/18.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Petar",
+      "salary": 7500,
+      "departmentId": 3,
+      "role": "Financial Controller",
+      "imageUrl": "https://randomuser.me/api/portraits/men/19.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Jack",
+      "salary": 8500,
+      "departmentId": 5,
+      "role": "IT Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/men/20.jpg"
+    },
+    {
+      "id": 21,
+      "name": "Monika",
+      "salary": 5000,
+      "departmentId": 1,
+      "role": "Sales Representative",
+      "imageUrl": "https://randomuser.me/api/portraits/women/21.jpg"
+    },
+    {
+      "id": 22,
+      "name": "Ben",
+      "salary": 6500,
+      "departmentId": 2,
+      "role": "Marketing Coordinator",
+      "imageUrl": "https://randomuser.me/api/portraits/men/22.jpg"
+    },
+    {
+      "id": 23,
+      "name": "Charlie",
+      "salary": 7000,
+      "departmentId": 3,
+      "role": "Financial Analyst",
+      "imageUrl": "https://randomuser.me/api/portraits/men/23.jpg"
+    },
+    {
+      "id": 24,
+      "name": "Kevin",
+      "salary": 700,
+      "departmentId": 4,
+      "role": "HR Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/men/24.jpg"
+    },
+    {
+      "id": 25,
+      "name": "Joseline",
+      "salary": 7000,
+      "departmentId": 5,
+      "role": "Software Engineer",
+      "imageUrl": "https://randomuser.me/api/portraits/women/25.jpg"
+    },
+    {
+      "id": 26,
+      "name": "Ivan",
+      "salary": 10000,
+      "departmentId": 6,
+      "role": "Operations Manager",
+      "imageUrl": "https://randomuser.me/api/portraits/men/26.jpg"
+    },
+    {
+      "id": 27,
+      "name": "Borislava",
+      "salary": 5500,
+      "departmentId": 1,
+      "role": "Sales Associate",
+      "imageUrl": "https://randomuser.me/api/portraits/women/27.jpg"
+    },
+    {
+      "id": 28,
+      "name": "Maria",
+      "salary": 6500,
+      "departmentId": 2,
+      "role": "Marketing Specialist",
+      "imageUrl": "https://randomuser.me/api/portraits/women/28.jpg"
+    },
+    {
+      "id": 29,
+      "name": "Ian",
+      "salary": 8000,
+      "departmentId": 3,
+      "role": "Financial Controller",
+      "imageUrl": "https://randomuser.me/api/portraits/men/29.jpg"
+    }
+  ],
+  "departments": [
+    { "id": 1, "name": "Sales", "description": "Responsible for sales activities.", "managerId": 101, "managerName": "Ian", "managerImageUrl": "https://randomuser.me/api/portraits/men/30.jpg" },
+    { "id": 2, "name": "Marketing", "description": "Responsible for marketing and promotions.", "managerId": 102, "managerName": "Charlie","managerImageUrl": "https://randomuser.me/api/portraits/men/31.jpg" },
+    { "id": 3, "name": "Finance", "description": "Responsible for financial management.", "managerId": 103, "managerName": "Georgia", "managerImageUrl": "https://randomuser.me/api/portraits/women/32.jpg" },
+    { "id": 4, "name": "Human Resources", "description": "Responsible for HR activities.", "managerId": 104, "managerName": "Joseline", "managerImageUrl": "https://randomuser.me/api/portraits/women/33.jpg" },
+    { "id": 5, "name": "IT", "description": "Responsible for IT infrastructure and support.", "managerId": 105, "managerName": "Ivan", "managerImageUrl": "https://randomuser.me/api/portraits/men/34.jpg" },
+    { "id": 6, "name": "Operations", "description": "Responsible for operational activities.", "managerId": 106, "managerName": "Maria", "managerImageUrl": "https://randomuser.me/api/portraits/women/35.jpg" }
+  ]
+}

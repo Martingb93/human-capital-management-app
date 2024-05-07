@@ -1,0 +1,25 @@
+:host {
+    display: block;
+}
+
+.empty-content {
+    padding: 50px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: 1px solid var(--vodka-medium);
+    border-radius: 10px;
+    color: var(--dark-gunmetal);
+    background-color: var(--white);
+
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    &__action {
+        margin-top: 12px;
+    }
+}

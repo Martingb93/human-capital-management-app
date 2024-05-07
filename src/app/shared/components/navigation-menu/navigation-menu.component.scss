@@ -1,0 +1,26 @@
+:host {
+    width: 250px;
+    min-width: 250px;
+    background-color: var(--grey);
+}
+
+.navigation__menu {
+    &-item {
+        text-decoration: auto;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        margin-bottom: 5px;
+        padding: 0 15px;
+        color: var(--midnightBlue);
+
+        &--selected {
+            background-color: var(--seaBlue);
+            color: var(--white);
+        }
+
+        mat-icon {
+            margin-right: 5px;
+        }
+    }
+}

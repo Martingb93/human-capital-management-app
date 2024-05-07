@@ -1,0 +1,16 @@
+<hcm-content-loader *ngIf="isLoading; else contentTemplate"></hcm-content-loader>
+<ng-template #contentTemplate>
+    <div class="page-layout">
+        <div class="page-layout__header text--ellipsis">
+            <span class="page-layout__text text--ellipsis">
+                {{ titleKeyword }}
+            </span>
+            <div class="page-layout__options">
+                <ng-content select="[page-layout-options]"></ng-content>
+            </div>
+        </div>
+        <div class="page-layout__body">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</ng-template>

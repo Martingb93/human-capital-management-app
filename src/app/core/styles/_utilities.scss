@@ -1,0 +1,32 @@
+.pointer {
+    cursor: pointer;
+}
+
+.radius-circle {
+    border-radius: 50%;
+}
+
+.display {
+    &--flex {
+        display: flex;
+    }
+}
+
+.content-center {
+    justify-content: center;
+}
+
+.flex {
+    &-column {
+        display: flex;
+        flex-direction: column;
+    }
+    &-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.pos--relative {
+    position: relative;
+}

@@ -1,0 +1,59 @@
+.mat-mdc-icon-button,.mat-mdc-button-base {
+    // width: 32px;
+    height: 32px;
+    padding: 10px;
+
+    .mat-mdc-button-touch-target {
+        width: 32px;
+        height: 32px;
+    }
+
+    .mat-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &.mat-primary {
+        color: var(--white);
+
+        &:not(:disabled) {
+            background-color: var(--midnightBlue);
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &:focus {
+                outline: var(--seaBlue) solid 3px;
+            }
+        }
+
+        &[disabled] {
+            background-color: var(--dim-grey);
+        }
+    }
+
+    &.mat-accent {
+        &:not(:disabled) {
+            color: var(--white);
+            background-color: var(--seaBlue);
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &:focus {
+                outline: var(--seaBlue) solid 3px;
+            }
+        }
+
+        &[disabled] {
+            color: var(--white);
+            background-color: var(--seaBlue);
+            opacity: 0.5;
+        }
+    }
+}

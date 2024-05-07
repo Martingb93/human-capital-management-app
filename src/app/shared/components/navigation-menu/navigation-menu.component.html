@@ -1,0 +1,7 @@
+<a *ngFor="let menuItem of mainMenuItems" [routerLink]="menuItem.route"
+    [routerLinkActive]="'navigation__menu-item--selected'"
+    [routerLinkActiveOptions]="{ exact: false }"
+    class="navigation__menu-item">
+    <mat-icon>{{ menuItem.icon }}</mat-icon>
+    <span>{{ menuItem.label }}</span>
+</a>
