@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { NavigationMenuComponent } from '../navigation-menu/navigation-menu.component';
 import { RouterOutlet } from '@angular/router';
+import { UserStateService } from '@core/services/user';
 
 @Component({
   selector: 'hcm-private-pages',
@@ -12,5 +13,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './private-pages.component.scss'
 })
 export class PrivatePagesComponent {
-
+  private readonly userStateService = inject(UserStateService);
+  
+  constructor() {
+    this.userStateService.loadCurrentUser();
+  }
 }

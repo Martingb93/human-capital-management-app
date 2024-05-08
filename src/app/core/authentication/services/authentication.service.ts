@@ -36,10 +36,6 @@ export class AuthenticationService extends BaseApi {
         return this.get<boolean>('validate-token', null, headers );
     }
 
-    public loadCurrentUser(): void {
-        this.userStateService.loadCurrentUser();
-    }
-
     public logout() {
         localStorage.removeItem('token');
         this.userStateService.clearCurrentUser();

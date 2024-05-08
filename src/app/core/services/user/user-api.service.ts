@@ -13,9 +13,7 @@ export class UserApiService extends BaseApi {
         return 'User';
     }
 
-    public getCurrentUser(token: string): Observable<UserViewModel> {
-        const headers = new HttpHeaders().set('authorization', token);
-        
-        return this.get<UserViewModel>('GetCurrentUser', null, headers);
+    public getCurrentUser(): Observable<UserViewModel> {
+        return this.get<UserViewModel>('GetCurrentUser');
     }
 }

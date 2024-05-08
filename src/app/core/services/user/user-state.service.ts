@@ -15,7 +15,7 @@ export class UserStateService {
 
     public loadCurrentUser(): void {
         if (this.currentUser() == null) {
-            this.userApiService.getCurrentUser(localStorage.getItem('token')).subscribe(user => {
+            this.userApiService.getCurrentUser().subscribe(user => {
                 this.currentUser.set(user);
                 this.userTypeRole.set(`${UserTypeRoleEnum[user.type]?.toLowerCase()}`);
             });

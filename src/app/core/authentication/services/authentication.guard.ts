@@ -1,6 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { AuthenticationService } from './authentication.service';
 import { Router } from '@angular/router';
+import { jwtDecode } from "jwt-decode";
+
 
 @Injectable({
     providedIn: 'root',
@@ -12,21 +14,26 @@ export class AuthtenticationGuard {
 
     public canActivate() {
         if (this.authService.getToken()) {
-            this.authService.validateToken().subscribe({
-                next: () => {
-                    this.authService.loadCurrentUser();
-                    this.router.navigate(['/dashboard']);
-                },
-                error: error => {
-                    console.error('Token validation failed:', error);
-                    this.router.navigate(['/login']);
-                },
+            const tokenInfo = this.getDecodedAccessToken(this.authService.getToken());
+            const expireDate = tokenInfo.exp * 1000;
+
+            if (new Date().getTime() > expireDate) {
+                this.router.navigate(['/login']);
+                return false;
             }
-            );
+            
             return true;
         } else {
             this.router.navigate(['/login']);
             return false;
+        }
+    }
+
+    private getDecodedAccessToken(token: string): any {
+        try {
+            return jwtDecode(token);
+        } catch (Error) {
+            return null;
         }
     }
 }
