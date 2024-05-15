@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { AuthenticationService } from './authentication.service';
 import { Router } from '@angular/router';
 import { jwtDecode } from "jwt-decode";
+import { UserStateService } from '@core/services/user';
 
 
 @Injectable({
@@ -10,7 +11,8 @@ import { jwtDecode } from "jwt-decode";
 export class AuthtenticationGuard {
     private readonly router = inject(Router);
 
-    private authService = inject(AuthenticationService);
+    private readonly authService = inject(AuthenticationService);
+    private readonly userStateService = inject(UserStateService);
 
     public canActivate() {
         if (this.authService.getToken()) {
@@ -21,7 +23,8 @@ export class AuthtenticationGuard {
                 this.router.navigate(['/login']);
                 return false;
             }
-            
+
+            this.userStateService.loadCurrentUser();
             return true;
         } else {
             this.router.navigate(['/login']);

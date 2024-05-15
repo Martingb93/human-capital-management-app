@@ -9,7 +9,7 @@ export const adminEmployeeRecordColumns: GenericTableColumn[] = [
         keyword: 'Name',
     },
     {
-        key: 'department',
+        key: 'departmentId',
         keyword: 'Department',
     },
     {
